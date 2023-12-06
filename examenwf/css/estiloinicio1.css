@@ -1,0 +1,422 @@
+/*Esto es solo para codepen*/
+@import url(https://fonts.googleapis.com/css?family=Frauces);
+@import url(https://fonts.googleapis.com/css?family=Bitter);
+/*Las fuentes originales son estas*/
+@font-face {
+  font-family: "Frauces"; 
+  src: url(../fonts/Frauces.ttf);
+}
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+* {
+  box-sizing: border-box;
+}
+
+.main-header a:link, a:visited, a:active {
+  text-decoration:none;
+}
+
+.main-header .container--flex a:visited {
+  color: #ffffff;
+  text-decoration:none;
+  
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container--flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*Estilos del header*/
+.main-header {
+  padding: 0 15px;
+  background-color: #0b92b8;
+}
+.main-title {
+  color: #161616;
+}
+.color-span{
+  color: #FFFF;
+}
+
+/*Estilos del menu*/
+  
+.menu{
+  position: absolute;
+  top: 80px;
+  left: 0;
+  background: #212121;
+  width: 100%;
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.icon-menu{
+  font-size: 1.5em;
+  color: #eeeeee;
+  border: 1px solid white;
+  display: block;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}  
+.menu__item {
+  padding: 20px;
+  text-align: center;
+  width: 150px;
+  margin: auto;
+}
+.menu__link {
+  color: #f1f1f1;
+  text-decoration: none;
+  position: relative;
+  display: block;
+}
+.menu__link:before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-right: 2px solid #ffff;
+  border-top: 2px solid #ffffff;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}
+.menu__link:after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-left: 2px solid #ffff;
+  border-bottom: 2px solid #ffffff;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+}
+.menu__link span:before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-left: 2px solid #ffff;
+  border-top: 2px solid #ffff;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.menu__link span:after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-bottom: 2px solid #ffff;
+  border-right: 2px solid #ffff;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+}
+.menu__link span{
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+}
+.menu__link--select:before, .menu__link--select:after, .menu__link--select span:before, .menu__link--select span:after {
+  opacity: 1;
+}
+
+.menu__item:hover .menu__link:before, .menu__item:hover .menu__link:after, .menu__item:hover .menu__link span:before, .menu__item:hover .menu__link span:after {
+    opacity: 1;
+  }
+  .nav-social{
+    display: flex;
+    justify-content: center;
+  }
+  .nav-social__item{
+    width: 35px;
+    height: 35px;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 10px;
+  }
+  .nav-social__item:first-child{
+    background: #3b5998;
+  }
+  .nav-social__item:nth-child(2){
+    background: #1da1f2;
+  }
+  .nav-social__item:nth-child(3){
+    background: #ea4c89;
+  }
+  .nav-social__item i{
+    color: rgb(255, 255, 255);
+  }
+  .mostrar{
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  
+  /*Estilos del banner*/
+
+  .banner {
+    background: url(http://localhost:8080/img/foto1.jpg);
+    min-height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -999;
+  }
+  .banner:before {
+    content: "";
+    width: 100%;
+    min-height: 400px;
+    background: rgba(0,0,0,0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+  }
+  .banner__content{
+    width: 100%;
+    padding: 15px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: white;
+    font-size: 1.3em;
+  }
+
+  /*fin estilos baner*/
+  /* welcome*/
+
+  .main{
+    margin-top: 350px;
+  }
+  .section__title {
+    font-size: 2em;
+    position: relative;
+    text-align: center;
+  }
+  .section__title:before {
+    content: "";
+    width: 200px;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 3px;
+    background: #000000;
+  }
+  .welcome{
+    text-align: center;
+    padding: 20px;
+    max-width: 750px;
+    margin: auto;
+  }
+  .welcome__txt{
+    font-size: 1.2em;
+    color: #777;
+  }
+  .welcome__btn {
+    display: block;
+    border: 2px solid #000000;
+    background: #0098cb;
+    width: 200px;
+    margin: auto;
+    padding: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 30px;
+    transition: all 0.5s;
+  }
+  .welcome__btn:hover {
+    background: #00b8eb;
+    color: white;
+  }
+
+  /*fin welcome*/
+  @media screen and (min-width: 768px) {
+    .menu{
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      width: auto;
+      display: flex;
+      background: none;
+      font-size: .8em;
+    }
+    .menu__item {
+      width: auto;
+    }
+    .icon-menu{
+      display: none;
+    }
+    .banner {
+      min-height: 500px;
+    }
+    .banner:before {
+      min-height: 500px;
+    }
+    .main{
+      margin-top: 400px;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .container {
+      width: 1000px;
+      margin: auto;
+    }
+    .main-title{
+      font-size: 2.5em;
+    }
+    .menu {
+      font-size: 1em;
+    }
+    .banner {
+      min-height: 600px;
+    }
+    .banner:before {
+      min-height: 600px;
+    }
+    .banner__title, .banner__txt {
+      font-size: 1.5em;
+      padding: 10px;
+    }
+    .main{
+      margin-top: 500px;
+    }
+  } 
+
+  @media screen and (min-width: 1280px) {
+    .container {
+      width: 1200px;
+    }
+    .design__title{
+      font-size: 2.5em;
+    }
+    .design__item{
+      height: 500px;
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+    .container {
+      width: 1400px;
+    }
+    .banner__title, .banner__txt {
+      font-size: 2em;
+    }
+  }
+
+  /*sub menu perfil */
+
+  .menu .menu__item:visited {
+    text-decoration:none;
+    
+  }
+
+  .submenu{
+    position: absolute;
+    background: #333333;
+    width: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.5s;
+    text-decoration: none;
+  }
+  
+  .submenu li a{
+    display: block;
+    padding: 15px;
+    color: #fff;
+    font-family: 'Open sans';
+    text-decoration: none;
+  }
+  
+  .menu li:hover .submenu{
+    visibility: visible;
+    opacity: 1;
+    text-decoration: none;
+  }
+  .submenu{
+    position: absolute;
+    background: #6b6969;
+    width: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.5s;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .submenu li a{
+    display: block;
+    padding: 15px;
+    color: rgb(255, 255, 255);
+    font-family: 'Open sans';
+    text-decoration: none;
+  }
+  
+  .menu li:hover .submenu{
+    visibility: visible;
+    opacity: 1;
+    text-decoration: none;
+  }
+
+  /*cformulario registro hotel*/
+
+  .form-register input{
+    width: 60%;
+    padding: 5px;
+    font-size: 16px;
+    margin-bottom: 25px;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom: 1px solid #a8a8a8;
+    color: #333;
+  }
+
+  .form-register .submit{
+    width: 15%;
+    padding: 10px;
+    color: #fff;
+    background: #0098cb;
+    font-size: 12px;
+    margin: 20px auto;
+    margin-top: 0;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+    }
+  
+    .form-register .submit:hover{
+      background-color: #4ab6d3;
+    }
+  .form-register .subirfoto{
+    background-color: #00b8eb;
+  }
